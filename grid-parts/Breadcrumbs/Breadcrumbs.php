@@ -121,7 +121,7 @@ class Breadcrumbs extends Grid_Part {
 	 */
 	public function remove_woocommerce_breadcrumbs() {
 		if ( Grid_Parts::is_grid_part_active( 'breadcrumbs' ) ) {
-			remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 );
+			remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20 );
 			remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb' );
 		}
 	}

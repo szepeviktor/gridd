@@ -83,7 +83,7 @@ class Scripts {
 
 		// Comments.
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-			$scripts[] = ABSPATH . WPINC . '/js/comment-reply.min.js';
+			$scripts[] = wp_scripts()->registered['comment-reply']->src;
 		}
 
 		$scripts = apply_filters( 'gridd_footer_inline_script_paths', $scripts );

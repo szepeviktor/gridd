@@ -7,6 +7,7 @@ parameters:
     checkMissingIterableValueType: false
     autoload_files:
         - packages/autoload.php
+        - tests/phpstan/bootstrap.php
         - inc/bootstrap-compatibility.php
         - packages/kirki-framework/compatibility/src/Kirki.php
         - inc/social-icons.php
@@ -26,6 +27,8 @@ parameters:
         # TODO Add AMP stubs
         - inc/classes/AMP.php
     ignoreErrors:
+        # Uses func_get_args()
+        - '#^Function apply_filters(_ref_array)? invoked with [34567] parameters, 2 required\.$#'
         # Core globals
         - '#^Undefined variable: \$post$#'
         # TODO Add EDD stubs

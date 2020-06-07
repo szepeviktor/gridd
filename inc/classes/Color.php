@@ -25,7 +25,7 @@ class Color {
 	 * @return string       The text color (hex).
 	 */
 	public static function get_readable_from_background( $color ) {
-		return self::get_contrast( $color, '#ffffff' ) > self::get_contrast( $color, '#000000' ) ? '#ffffff' : '#000000';
+		return self::get_contrast( [$color, '#ffffff'] ) > self::get_contrast( [$color, '#000000'] ) ? '#ffffff' : '#000000';
 	}
 
 	/**
